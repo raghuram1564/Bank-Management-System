@@ -56,6 +56,10 @@ class Bank {
 						System.out.println("Your account is currently Inactive, as you are not logged in for more than 30 days");
 						return false; 
 					}
+					else{
+						users.get(id).setLastLoginTime(new Date());
+						return users.get(id).verifyPassword(password);
+					}
 				}
 				else{
 					users.get(id).setLastLoginTime(new Date());
